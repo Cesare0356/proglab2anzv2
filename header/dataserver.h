@@ -11,16 +11,22 @@ game_state curr_state = STATO_ATTESA;
 //Mutex per sincronizzazione
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
-//Variabili globali utilizzate
+//Seed
 unsigned int seed = 0;
+//Socket del server
 int server_socket;
-int active_clients = 0;
+//Dizionario standard
 char *dizionario = "dictionary_ita.txt";
+//File vuoto se non passo --matrici, altrimenti genera random
 char *data_filename="";
-int tempo_attesa = 7;  
-int durata = 15;
+//Tempo di attesa fine partita
+int tempo_attesa = 10;  
+//Durata di una partita
+int durata = 10;
+//Timer per segnare l'inizio e la fine della partita
 time_t inizio_partita;
 time_t fine_partita;
+//Buffer globale che invia la classifica all'utente quando richiesta durante la pausa
 char classifica[256];
 
 //Funzioni da implementare
