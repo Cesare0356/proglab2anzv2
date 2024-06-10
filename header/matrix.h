@@ -1,7 +1,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #define N 4
 #define MAXCHARS 26
 char matrix[N][N];
@@ -23,11 +22,9 @@ static int curr_linea = -1;
 //Funzioni da implementare
 void genera_matrice(char *filename);
 void matrice_tostring(char *buffer);
-void printList(Nodo* head);
 void aggiungi_parola(Nodo** head,char *parola);
 void rimuovi_parola(Nodo** head);
 int is_parola_presa(Nodo *head,char *parola);
-int is_valid(int x, int y, int visited[N][N]);
 int trova_parola(char matrix[N][N], int visited[N][N], char *parola, int index, int x, int y);
 int is_parola_valida(char matrix[N][N], char *parola);
 TrieNodo* crea_tnodo(void);
