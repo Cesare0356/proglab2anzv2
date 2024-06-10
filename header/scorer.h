@@ -9,16 +9,7 @@ typedef struct score_t {
     struct score_t* next;
 } score_t;
 
-//Coda scorer
-typedef struct {
-    score_t* head;
-    score_t* tail;
-    pthread_mutex_t mutex_score;
-    pthread_cond_t cond_score;
-} score_queue;
-
 //Funzioni da implementare
-void init_queue(score_queue* queue);
-void enqueue_score(score_queue* queue, char* username, int score);
-score_t* deque_score(score_queue* queue);
+void push_score(score_t** head, char* username, int score);
+score_t* pop_score(score_t** head);
 int compare_scores_final(const void* a, const void* b);
